@@ -30,5 +30,23 @@ const data = {
       prereqs: [159],
       credits: 3,
     },
+    {
+      prefix: "CS",
+      number: 347,
+      title: "Web Development",
+      url: "https://catalog.jmu.edu/preview_course_nopop.php?catoid=50&coid=257214",
+      desc: "Overview of application software development fundamentals and their use in building stand-alone applications, visualizing and interacting with complex data representations, and controlling the Internet of Things. This course provides an introduction to the technologies used to create modern user interfaces (e.g., web technologies), establishing a common foundation for later application-focused courses.",
+      prereqs: [343],
+      credits: 3,
+    },
+    {
+      prefix: "CS",
+      number: 349,
+      title: "Developing Interactive Multimedia",
+      url: "https://catalog.jmu.edu/preview_course_nopop.php?catoid=50&coid=257192",
+      desc: "Overview of application software development fundamentals and their use in building stand-alone applications, visualizing and interacting with complex data representations, and controlling the Internet of Things. This course provides an introduction to the technologies used to create modern user interfaces (e.g., web technologies), establishing a common foundation for later application-focused courses.",
+      prereqs: [240],
+      credits: 3,
+    },
   ],
 };
