@@ -15,11 +15,13 @@ const courseToCard = ({
     .join();
   const courseTemplate = `<div class="col">
             <div class="card" style="width: 18rem;">
-              <h3 class="card-header">${title}</h3>
+              <h3 class="card-header">${title}</h3> 
               <div class="card-body">
                 <h5 class="card-title">${prefix} ${number}</h5>
                 <p class="card-text">${desc}</p>
-                ${prereqLinks}
+                <p class="card-text">Prerequisites: ${prereqLinks}</p>
+                <p class="card-text">Credits: ${credits}</p>
+                <a href="${url}" class="btn btn-primary">Go to course</a>
               </div>
             </div>
           </div>`;
