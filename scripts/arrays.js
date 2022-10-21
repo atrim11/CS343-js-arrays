@@ -58,6 +58,17 @@ searchButton.addEventListener("click", (ev) => {
   );
   console.log("filteredCourseCards", filteredCourseCards);
   resultsContainer.innerHTML = filteredCourseCards.join("");
+  updateSummary(filteredCourseCards);
 });
 
 // 3. we update the result count and related summary info as we filter
+
+function updateSummary(cards) {
+  const items = document.getElementById('items');
+  const total = document.getElementById("total");
+  const prerec = document.getElementById("prerec");
+  items.textContent = cards.length;
+  
+}
+
+updateSummary(courseCards);
