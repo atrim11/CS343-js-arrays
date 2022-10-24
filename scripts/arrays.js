@@ -31,35 +31,24 @@ const courseToCard = ({
 const resultsContainer = document.querySelector("#filtered-results");
 const courseCards = data.items.map(courseToCard);
 resultsContainer.innerHTML = courseCards.join("");
-// courseCards.forEach((c) => document.write(c));
-
-// console.log(courseCards);
-// document.write(courseCards.join(''))
 
 // 2. maybe we only show those that match the search query?
-//
 
 function filterCourseCard(markup, query) {
   console.log(markup, query);
   return markup.toLowerCase().includes(query.toLowerCase());
 }
 
-const searchButton = document.getElementById("search-btn");
-searchButton.addEventListener("click", (ev) => {
-  console.log(ev);
+const searchField = document.querySelector('input[name="query-text"]');
+searchField.addEventListener("input", (ev) => {
   ev.preventDefault();
-  // ev.stopPropagation();
-  console.log("query text");
-  const searchField = document.querySelector('input[name="query-text"]');
   const queryText = searchField.value;
-  console.log(queryText);
-  const filteredCourseCards = courseCards.filter((card) =>
+  const filteredCourseCards = courseCards.filter((card) => 
     filterCourseCard(card, queryText)
   );
-  console.log("filteredCourseCards", filteredCourseCards);
   resultsContainer.innerHTML = filteredCourseCards.join("");
   updateSummary(filteredCourseCards);
-});
+}); 
 
 // 3. we update the result count and related summary info as we filter
 
@@ -75,3 +64,4 @@ function updateSummary(cards) {
 }
 
 updateSummary(courseCards);
+
