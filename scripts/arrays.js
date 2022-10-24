@@ -11,7 +11,7 @@ const courseToCard = ({
   credits,
 }) => {
   const prereqLinks = prereqs
-    .map((prereq) => `<a href="#" class="card-link">${prereq}</a>`)
+    .map((prereq) => `<a id="prereqs" href="#" class="card-link">${prereq}</a>`)
     .join();
   const courseTemplate = `<div class="col">
             <div class="card" style="width: 18rem;">
@@ -20,7 +20,7 @@ const courseToCard = ({
                 <h5 class="card-title">${prefix} ${number}</h5>
                 <p class="card-text">${desc}</p>
                 ${prereqLinks}
-                <div class="card-footer text-muted">
+                <div id="credits"class="card-footer text-muted">
                   ${credits}
                 </div>
               </div>
@@ -67,8 +67,11 @@ function updateSummary(cards) {
   const items = document.getElementById('items');
   const total = document.getElementById("total");
   const prerec = document.getElementById("prerec");
+  const countT = cards.filter((card) => card.includes("credits")).length * 3;
+  const countP = cards.filter((card) => card.includes("prereqs")).length * 3;
   items.textContent = cards.length;
-  
+  total.textContent = countT;
+  prerec.textContent = countP;
 }
 
 updateSummary(courseCards);
