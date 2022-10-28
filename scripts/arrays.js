@@ -1,4 +1,31 @@
-console.log(data);
+// we need to get the data from json file
+
+const locationOfData = "data.json"
+
+//call back version
+function reqListener() {
+  const structuredData = JSON.parse(this.responseText);
+  console.log("structuredData", structuredData);
+}
+// const req = new XMLHttpRequest();
+// req.addEventListener("load", reqListener);
+// req.open("GET", locationOfData);
+// req.send();
+
+//promisises version 
+function logWhenSuccessful (response) {
+  console.log("response", response);
+  return response;
+}
+
+function dealWithException (err) {
+  console.error(err);
+}
+
+const responsePromise = fetch(locationOfData)
+responsePromise.then(logWhenSuccessful)
+responsePromise.catch(dealWithException)
+
 // 1. instead of creating the cards manually, we should use array functions to convert the data into cards
 
 const courseToCard = ({
